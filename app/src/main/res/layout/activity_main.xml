@@ -5,49 +5,89 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/displaycolor">
     tools:context="com.example.oyun.cse.MainActivity">
 
-    <Button
-        android:id="@+id/notice"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:text="학사공지" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
-    <Button
-        android:id="@+id/gnotice"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_below="@+id/notice"
-        android:layout_marginTop="40dp"
-        android:text="일반소식" />
+        <Button
+            android:id="@+id/notice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="10pt"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="@drawable/buttonimage"
+            android:layout_margin="5dp"
+            android:text="학사공지" />
 
-    <Button
-        android:id="@+id/saccord"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_below="@+id/gnotice"
-        android:layout_marginTop="40dp"
-        android:text="사업단소식" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/job"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_below="@+id/saccord"
-        android:layout_marginTop="40dp"
-        android:text="취업정보" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/event"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_below="@+id/job"
-        android:layout_marginTop="40dp"
-        android:text="CSE News" />
+        <Button
+            android:id="@+id/gnotice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="10pt"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="@drawable/buttonimage"
+            android:layout_margin="5dp"
+            android:text="일반소식" />
+
+        <Button
+            android:id="@+id/saccord"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="10pt"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="@drawable/buttonimage"
+            android:layout_margin="5dp"
+            android:text="사업단소식" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/job"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="10pt"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="@drawable/buttonimage"
+            android:layout_margin="5dp"
+            android:text="취업정보" />
+
+        <Button
+            android:id="@+id/event"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="10pt"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="@drawable/buttonimage"
+            android:layout_margin="5dp"
+            android:text="CSE News" />
+
+    </LinearLayout>
+
 </LinearLayout>

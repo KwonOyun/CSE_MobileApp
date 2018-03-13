@@ -10,13 +10,17 @@ public class Information {
     String number;
     String writer;
     String time;
+    String url;
 
-    public Information(String title, String number, String writer, String time){
+    public Information(String title, String number, String writer, String time, String url){
         this.title = title;
         this.number = number;
         this.writer = writer;
         this.time = time;
+        this.url = url;
     }
+
+    public String getUrl() {return url;}
 
     public String getTitle() {
         return title;
@@ -49,4 +53,6 @@ public class Information {
     public void setTime(String time) {
         this.time = time;
     }
+
+    public void setUrl(String url) {this.url = url;}
 }

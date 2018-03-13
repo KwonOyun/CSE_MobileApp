@@ -5,6 +5,8 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -26,6 +28,8 @@ public class Event extends AppCompatActivity {
     private Information information5;
     private List<Information> informationList = new ArrayList<Information>();
 
+    Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +39,15 @@ public class Event extends AppCompatActivity {
         new BackgroundTask().execute();
         adapter = new InformationListAdapter(getApplicationContext(), informationList);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Information item = (Information) adapter.getItem(position);
+                intent = new Intent(getApplicationContext(), WebViewActivity.class);
+                intent.putExtra("url", item.getUrl());
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -54,14 +67,15 @@ public class Event extends AppCompatActivity {
                 JSONObject jsonObject = new JSONObject(result);
                 JSONArray jsonArray = jsonObject.getJSONArray("response");
                 int count = 0;
-                String anumber, atitle, awriter, atime;
+                String anumber, atitle, awriter, atime, aurl;
                 while(count<jsonArray.length()){
                     JSONObject object = jsonArray.getJSONObject(count);
                     anumber = object.getString("number");
                     atitle = object.getString("title");
                     awriter = object.getString("writer");
                     atime = object.getString("time");
-                    information5 = new Information(atitle, anumber, awriter, atime);
+                    aurl = object.getString("url");
+                    information5 = new Information(atitle, anumber, awriter, atime,aurl);
                     informationList.add(information5);
                     count++;
                 }

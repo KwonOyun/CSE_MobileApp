@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#314264"
     android:orientation="vertical"
     tools:context="com.example.oyun.cse.Notice">
 
@@ -12,5 +13,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:dividerHeight="10dp"
-        android:divider="#D9DAD8"/>
+        android:divider="#314264"/>
 </LinearLayout>
